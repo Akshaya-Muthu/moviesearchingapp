@@ -33,7 +33,15 @@ export default function SearchPage() {
   }, [query, page, type]);
 
   return (
-    <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-blue-900 via-cyan-700 to-teal-600 text-white p-8 select-none">
+    <div
+      className="relative overflow-hidden min-h-screen bg-fixed bg-center bg-cover text-white p-8 select-none"
+      style={{
+        backgroundImage: "url('https://img.freepik.com/free-photo/movie-background-collage_23-2149876003.jpg')",
+      }}
+    >
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-cyan-700/60 to-teal-600/50 z-0"></div>
+
       {/* Floating animated bubbles */}
       <div className="bubbles">
         {[...Array(15)].map((_, i) => (
@@ -123,7 +131,6 @@ export default function SearchPage() {
           animation-duration: 21s;
           animation-delay: 7s;
         }
-        /* add more nth-child styles for variety */
         @keyframes rise {
           0% {
             transform: translateY(0) scale(1);
@@ -148,10 +155,3 @@ export default function SearchPage() {
     </div>
   );
 }
-
-
-
-
-
-
-
